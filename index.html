@@ -150,6 +150,7 @@ button{font-family:inherit;cursor:pointer;border:none}
 .allch summary{cursor:pointer;color:var(--blue);font-weight:800;text-align:center}
 .allch ol{padding-left:26px;margin-top:8px;white-space:pre-line}
 .allch li{margin-bottom:8px}
+.credit{margin-top:16px;padding-top:12px;border-top:2px solid #e6ecf2;color:var(--muted);font-weight:700;font-size:14px}
 .toast{position:absolute;top:10px;left:50%;transform:translateX(-50%);background:#16324a;color:#fff;font-weight:800;padding:8px 18px;border-radius:999px;
   font-size:15px;opacity:0;pointer-events:none;transition:opacity .2s;white-space:nowrap;z-index:5}
 .toast.show{opacity:1}
@@ -289,6 +290,7 @@ button{font-family:inherit;cursor:pointer;border:none}
       </div>
       <div class="shout">Shout your chant together, then press START GAME!</div>
       <details class="allch"><summary>See all 10 chants</summary><ol id="chList"></ol></details>
+      <div class="credit" id="credit"></div>
     </div>
 
     <div class="warn" id="warn"></div>
@@ -761,6 +763,7 @@ $('#chList').innerHTML = CHANTS.map(c=>`<li>${c.replaceAll('{team}','YOUR TEAM')
 
 /* init */
 document.title=GAME_TITLE; $('#gameTitle').textContent=GAME_TITLE;
+$('#credit').textContent=`© 2026 ${GAME_TITLE} | Developed by AMSanjeev (Teach For India Fellow 2026–28)`;
 loadPrefs(); buildTrackList(); paintMusic();
 buildScene(); gotoStep(0);
 </script>
